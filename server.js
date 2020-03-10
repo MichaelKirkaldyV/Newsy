@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 // where the routes used to be, we're going to require routes.js
 // since routes.js exports a function, server.js will receive that function
 // invoke the function we get from the require and pass it app as an argument
-
+require('./server/config/routes.js')(app)
 
 
 //This "catch-all" route must be the very last route to be triggered and belongs at the end of the server.js
