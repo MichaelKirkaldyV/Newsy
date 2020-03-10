@@ -13,12 +13,10 @@ export class HttpService {
 
 
   getTopHeadlines(){
-    console.log("Getting the News Api...in http.service.ts")
     return this.http.get('http://newsapi.org/v2/top-headlines?' + 'country=us&' + 'apiKey=77fbb327135b47dd939102b7c73fefd1');
   }
 
   getSources() {
-    console.log("Getting all news sources..")
     return this.http.get('http://newsapi.org/v2/sources?apiKey=77fbb327135b47dd939102b7c73fefd1');
   }
 

@@ -1,7 +1,8 @@
-var apiController = require('./../controllers/news.js')
+var apiController = require('./../controller/news.js')
 
 module.exports = function(app){
-    console.log("In routes.js")
+    
+    console.log("In the server routes")
 	app.get('/api/showAll', apiController.showAll)
 
 };
