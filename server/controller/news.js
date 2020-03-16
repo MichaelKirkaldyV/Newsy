@@ -7,7 +7,7 @@ module.exports = {
 
     showAll: function(req, res) {
         console.log("In show all function")
-        var logoFolder = './../server/public/src/assets/images';
+        var logoFolder = './public/src/assets/images';
         
         // Use file system to list all images in assests/images folder
         fs.readdir(logoFolder, (err, files) => {
@@ -18,7 +18,7 @@ module.exports = {
                 files.forEach(file => {
                     console.log(file);
                   });
-                res.json(files) 
+            res.json(files) 
             }
         });
     }
