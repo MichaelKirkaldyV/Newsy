@@ -12,9 +12,9 @@ export class AppComponent {
     outlets: string[] = [];
     news: any;
     logos: any;
+    logos_: any;
 
   constructor(private _http: HttpService) {
-    console.log('app component constructor called'); 
     this.retrieveHeadlines();
     this.retrieveSources();
     this.retriveNewsLogos();
@@ -23,18 +23,15 @@ export class AppComponent {
   retrieveHeadlines() {
     this._http.getTopHeadlines().subscribe(data => {
       this.sites = data;
-      console.log("Here are the sites requested", this.sites);
     })
   }
 
   retrieveSources() {
     this._http.getSources().subscribe(data => {
       this.news = data;
-      console.log("SOURCES", this.news)
       for(let source of this.news.sources) {
         this.outlets.push(source.name);
       }
-      console.log("OUTLETS", this.outlets)
     })
   }
 
@@ -42,10 +39,11 @@ export class AppComponent {
     let observable = this._http.getAllLogos()
     observable.subscribe(data => {
       console.log("Here are the logos...", data)
-      this.logos = data
-      for(let logo of this.logos){
+      this.logos_ = data
+      for(let logo of this.logos_){
         this.logos.push(logo)
       }
     })
   }
+
 }// End of exports
