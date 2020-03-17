@@ -4,6 +4,6 @@ var mongoose = require('mongoose');
 module.exports = function(app){
     
     console.log("In the server routes")
-	app.get('api/showAll', apiController.showAll)
+	app.get('/api/showAll', apiController.showAll)
 
 };

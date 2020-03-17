@@ -17,7 +17,7 @@ export class AppComponent {
   constructor(private _http: HttpService) {
     this.retrieveHeadlines();
     this.retrieveSources();
-    this.retriveNewsLogos();
+    this.retrieveNewsLogos();
   }
 
   retrieveHeadlines() {
@@ -35,13 +35,13 @@ export class AppComponent {
     })
   }
 
-  retriveNewsLogos() {
-    let observable = this._http.getAllLogos()
-    observable.subscribe(data => {
+  retrieveNewsLogos() {
+    this._http.getAllLogos().subscribe(data => {
       console.log("Here are the logos...", data)
       this.logos_ = data
       for(let logo of this.logos_){
         this.logos.push(logo)
+        console.log(this.logos)
       }
     })
   }
