@@ -1,111 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!--<script src="https://kit.fontawesome.com/89f5013cd8.js" crossorigin="anonymous"></script>!-->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  <title>Newsy</title>
-</head>
-<body>
-  <div class="container">
-    <h1 class="title">Newsy</h1>
-    <div class="top-row">
-      <div class="div-one">
-        <div class="box-header"><h1>News Headline</h1></div>
-        <div class="box-title">
-          <h1 class="desc">{{sites.articles[0].title}}</h1>
-          <p class="s-name">{{sites.articles[0].source.name}}</p>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>Newsy</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">Newsy</h1>
+        <div class="div-one" *ngFor="let article of articles">
+          <div class="box-header"><h1>{{article.source.name}}</h1></div>
+          <div class="box-title">
+            <h1 class="desc">{{article.title}}</h1>
+            <img src="{{article.urlToImage}}" alt="headline-img" class="head-img">
+            <p>{{article.description}}</p>
+            <div class="box-opt">
+              <a href="" class="options"><i class="fas fa-heart"></i>Likes</a>
+              <a href="" class="options"><i class="fas fa-comment"></i>Comments</a>
+              <a href="" class="options"><i class="fas fa-share-alt"></i>Share</a>
+            </div>
+          </div>
         </div>
-        <div class="box-img"><img src="{{sites.articles[0].urlToImage}}" alt="headline-img" class="head-img"></div>
-        <div class="desc-two">{{sites.articles[0].description}}</div>
-        <div class="box-opt">
-          <a href="" class="options"><i class="fas fa-heart"></i>Likes</a>
-          <a href="" class="options"><i class="fas fa-comment"></i>Comments</a>
-          <a href="" class="options"><i class="fas fa-share-alt"></i>Share</a>
-        </div>
-      </div>
-      <div class="div-two">
-        <div class="box-header"><h1>News Headline</h1></div>
-        <div class="box-title">
-          <h1 class="desc">{{sites.articles[1].title}}</h1>
-          <p class="s-name">{{sites.articles[1].source.name}}</p>
-        </div>
-        <div class="box-img"><img src="{{sites.articles[1].urlToImage}}" alt="headline-img" class="head-img"></div>
-        <div class="desc-two">{{sites.articles[1].description}}</div>
-        <div class="box-opt">
-          <a href="" class="options"><i class="fas fa-heart"></i>Likes</a>
-          <a href="" class="options"><i class="fas fa-comment"></i>Comments</a>
-          <a href="" class="options"><i class="fas fa-share-alt"></i>Share</a>
-        </div>
-      </div>
-      <div class="div-three">
-        <div class="box-header"><h1>News Headline</h1></div>
-        <div class="box-title">
-          <h1 class="desc">{{sites.articles[2].title}}</h1>
-          <p >{{sites.articles[2].source.name}}</p>
-        </div>
-        <div class="box-img"><img src="{{sites.articles[2].urlToImage}}" alt="headline-img" class="head-img"></div>
-        <div class="desc-two">{{sites.articles[2].description}}</div>
-        <div class="box-opt">
-          <a href="" class="options"><i class="fas fa-heart"></i>Likes</a>
-          <a href="" class="options"><i class="fas fa-comment"></i>Comments</a>
-          <a href="" class="options"><i class="fas fa-share-alt"></i>Share</a>
-        </div>
-      </div>
     </div>
-    <div class="bottom-row">
-      <div class="div-four">
-        <div class="box-header"><h1>News Headline</h1></div>
-        <div class="box-title">
-          <h1 class="desc">{{sites.articles[3].title}}</h1>
-          <p >{{sites.articles[3].source.name}}</p>
-        </div>
-        <div class="box-img"><img src="{{sites.articles[3].urlToImage}}" alt="headline-img" class="head-img"></div>
-        <div class="desc-two">{{sites.articles[3].description}}</div>
-        <div class="box-opt">
-          <a href="" class="options"><i class="fas fa-heart"></i>Likes</a>
-          <a href="" class="options"><i class="fas fa-comment"></i>Comments</a>
-          <a href="" class="options"><i class="fas fa-share-alt"></i>Share</a>
-        </div>
-      </div>
-      <div class="div-five">
-        <div class="box-header"><h1>News Headline</h1></div>
-        <div class="box-title">
-          <h1 class="desc">{{sites.articles[4].title}}</h1>
-          <p class="s-name">{{sites.articles[4].source.name}}</p>
-        </div>
-        <div class="box-img"><img src="{{sites.articles[4].urlToImage}}" alt="headline-img" class="head-img"></div>
-        <div class="desc-two">{{sites.articles[4].description}}</div>
-        <div class="box-opt">
-          <a href="" class="options"><i class="fas fa-heart"></i>Likes</a>
-          <a href="" class="options"><i class="fas fa-comment"></i>Comments</a>
-          <a href="" class="options"><i class="fas fa-share-alt"></i>Share</a>
-        </div>
-      </div>
-      <div class="div-six">
-        <div class="box-header"><h1>News Headline</h1></div>
-        <div class="box-title">
-          <h1 class="desc">{{sites.articles[5].title}}</h1>
-          <p class="s-name">{{sites.articles[5].source.name}}</p>
-        </div>
-        <div class="box-img"><img src="{{sites.articles[5].urlToImage}}" alt="headline-img" class="head-img"></div>
-        <div class="desc-two">{{sites.articles[5].description}}</div>
-        <div class="box-opt">
-          <a href="" class="options"><i class="fas fa-heart"></i>Likes</a>
-          <a href="" class="options"><i class="fas fa-comment"></i>Comments</a>
-          <a href="" class="options"><i class="fas fa-share-alt"></i>Share</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="news">
-    <div *ngFor="let logo of logos">
-      <img src="../assets/images/{{logo}}" alt="logo-img">
-    </div>
-    <ul *ngFor="let x of outlets">
-      <li>{{x}}</li>
-    </ul>
-  </div>
-</body>
+  </body>
 </html>

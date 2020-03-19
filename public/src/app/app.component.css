@@ -25,7 +25,7 @@
     margin-bottom: 25px;
 }
 
-.div-one, .div-two, .div-three, .div-four, .div-five, .div-six  {
+.div-one {
     height: 572px;
     width: 578px;
     border-radius: 10px;
@@ -33,13 +33,10 @@
     display: inline-block;
     margin-right: 45px;
     margin-top: 20px;
+    margin-bottom: 20px;
     box-shadow: 10px 10px 8px #888888;
     vertical-align: top;
     text-align: left;
-}
-
-.top-row, .bottom-row {
-    text-align: center;
 }
 
 .box-header {
@@ -77,15 +74,17 @@ img {
 }
 
 .desc {
-    font-size: 13px;
+    font-size: 16px;
     text-align: left;
     margin: 10px 10px 0 10px;
+    margin-bottom: 25px;
 }
 
 .box-title p {
     text-align: left;
     margin-left: 10px;
     margin-bottom: 10px;
+    height: 43px;
 }
 
 .news {
@@ -114,7 +113,23 @@ i {
     width: 20px;
     cursor: pointer;
     margin-right: 10px;
-    color: #006fc6;
+    color: #504fa4;
 }
 
+.logo {
+    background-color: yellow;
+    height: 700px;
+    width: 300px;
+    display: inline-block;
+}
 
+.logo-img {
+    height: 35px;
+    width: 35px;
+}
+
+.test {
+    height: 400px;
+    width: 400px;
+    background-color: red;
+}
