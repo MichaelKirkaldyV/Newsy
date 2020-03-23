@@ -52,6 +52,8 @@
     font-size: 20px;
     margin-left: 19px;
     padding-top: 19px;
+    display: inline-block;
+    vertical-align: top;
 }
 
 .box-img {
@@ -132,4 +134,14 @@ i {
     height: 400px;
     width: 400px;
     background-color: red;
+}
+
+.logo-image {
+    height: 45px;
+    width: 45px;
+    background-size: cover;
+    display: inline-block;
+    border-radius: 50px;
+    margin-left: 10px;
+    margin-top: 8px;
 }

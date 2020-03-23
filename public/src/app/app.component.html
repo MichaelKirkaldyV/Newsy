@@ -10,7 +10,10 @@
     <div class="container">
       <h1 class="title">Newsy</h1>
         <div class="div-one" *ngFor="let article of articles">
-          <div class="box-header"><h1>{{article.source.name}}</h1></div>
+          <div class="box-header">
+            <div [ngStyle]="{'background-image': 'url(../assets/images/'+ article.source.id +'.png)'}" class="logo-image"></div>
+            <h1>{{article.source.name}}</h1>
+          </div>
           <div class="box-title">
             <h1 class="desc">{{article.title}}</h1>
             <img src="{{article.urlToImage}}" alt="headline-img" class="head-img">
@@ -19,8 +22,13 @@
               <a href="" class="options"><i class="fas fa-heart"></i>Likes</a>
               <a href="" class="options"><i class="fas fa-comment"></i>Comments</a>
               <a href="" class="options"><i class="fas fa-share-alt"></i>Share</a>
+              <a href="" class="options"><i class="fas fa-info"></i>More</a>
             </div>
           </div>
+        </div>
+        <div class="side-nav" *ngFor="let source of news">
+          <div [ngStyle]="{'background-image': 'url(../assets/images/'+ source.id +'.png)'}" class="logo-image"></div>
+          <p>{{source.id}}</p>
         </div>
     </div>
   </body>
