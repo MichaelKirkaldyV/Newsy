@@ -8,16 +8,19 @@
   </head>
   <body>
     <div class="container">
-      <h1 class="title">Newsy</h1>
+      <div class="header">
+        <h1 class="title">Newsy</h1>
+        <button><i class="fas fa-search"></i></button>
+      </div>
         <div class="div-one" *ngFor="let article of articles">
           <div class="box-header">
-            <div [ngStyle]="{'background-image': 'url(../assets/images/'+ article.source.id +'.png)'}" class="logo-image"></div>
             <h1>{{article.source.name}}</h1>
+            <div [ngStyle]="{'background-image': 'url(../assets/images/'+ article.source.id +'.png)'}" class="logo-image"></div>
           </div>
           <div class="box-title">
             <h1 class="desc">{{article.title}}</h1>
             <img src="{{article.urlToImage}}" alt="headline-img" class="head-img">
-            <p>{{article.description}}</p>
+            <p class="a-desc">{{article.description}}</p>
             <div class="box-opt">
               <a href="" class="options"><i class="fas fa-heart"></i>Likes</a>
               <a href="" class="options"><i class="fas fa-comment"></i>Comments</a>
@@ -27,8 +30,8 @@
           </div>
         </div>
         <div class="side-nav" *ngFor="let source of news">
-          <div [ngStyle]="{'background-image': 'url(../assets/images/'+ source.id +'.png)'}" class="logo-image"></div>
-          <p>{{source.id}}</p>
+          <div @fade [ngStyle]="{'background-image': 'url(../assets/images/'+ source.id +'.png)'}" class="logo-image"></div>
+          <p @fade class="s-id">{{source.id}}</p>
         </div>
     </div>
   </body>

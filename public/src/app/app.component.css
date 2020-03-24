@@ -23,6 +23,7 @@
     font-family: 'butler-black-extrabold', 'arial', sans-serif;
     color: blue;
     margin-bottom: 25px;
+    display: inline-block;
 }
 
 .div-one {
@@ -144,4 +145,27 @@ i {
     border-radius: 50px;
     margin-left: 10px;
     margin-top: 8px;
+}
+
+.a-desc {
+    margin-top: 7px;
+}
+
+.s-id {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 24px;
+    margin-left: 7px;
+    font-weight: bold;
+}
+
+.side-nav {
+    width: 315px;
+    height: 100%;
+    background-color: white;
+}
+
+button {
+    border: none;
+    margin-left: 25px;
 }

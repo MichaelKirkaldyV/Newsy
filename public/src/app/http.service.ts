@@ -21,7 +21,6 @@ export class HttpService {
   }
 
   getAllLogos() {
-    console.log("In the service...getting logos")
     return this.http.get('/api/showAll');
   }
   
