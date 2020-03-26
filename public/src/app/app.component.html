@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="  crossorigin="anonymous"></script>
     <title>Newsy</title>
   </head>
   <body>
     <div class="container">
       <div class="header">
         <h1 class="title">Newsy</h1>
-        <button><i class="fas fa-search"></i></button>
+        <button (click)="changeState()"><i class="fas fa-search"></i></button>
       </div>
-        <div class="div-one" *ngFor="let article of articles">
+        <div  class="div-one" *ngFor="let article of articles">
           <div class="box-header">
             <h1>{{article.source.name}}</h1>
             <div [ngStyle]="{'background-image': 'url(../assets/images/'+ article.source.id +'.png)'}" class="logo-image"></div>
@@ -29,10 +30,21 @@
             </div>
           </div>
         </div>
-        <div class="side-nav" *ngFor="let source of news">
-          <div @fade [ngStyle]="{'background-image': 'url(../assets/images/'+ source.id +'.png)'}" class="logo-image"></div>
-          <p @fade class="s-id">{{source.id}}</p>
-        </div>
+          <div [@fade]=current_state class="side-nav">
+            <div *ngFor="let source of news">
+              <a href=""><div @fade [ngStyle]="{'background-image': 'url(../assets/images/'+ source.id +'.png)'}" class="logo-image"></div></a>
+              <a href=""><p @fade class="s-id">{{source.id}}</p></a>
+            </div>
+          </div>
     </div>
   </body>
 </html>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("button").click(function(event){
+          event.preventDefault();
+            $(".side-nav").hide();
+        });
+    });
+</script>

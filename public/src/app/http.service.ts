@@ -19,9 +19,5 @@ export class HttpService {
   getSources() {
     return this.http.get('http://newsapi.org/v2/sources?apiKey=77fbb327135b47dd939102b7c73fefd1');
   }
-
-  getAllLogos() {
-    return this.http.get('/api/showAll');
-  }
   
 }// End of export
