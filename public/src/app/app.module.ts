@@ -6,13 +6,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpService } from './http.service';
-import { InfoComponent } from './info/info.component';
+import { SourceComponent } from './source/source.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    InfoComponent
+    SourceComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -20,7 +22,7 @@ import { InfoComponent } from './info/info.component';
     HttpClientModule,
     BrowserAnimationsModule
   ],
-  providers: [HttpService, AppComponent],
+  providers: [HttpService, AppComponent, SourceComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

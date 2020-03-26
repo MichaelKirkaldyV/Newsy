@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
-import { HttpService } from './http.service';
-
+import { Component, OnInit } from '@angular/core';
+import { HttpService } from '../http.service';
 import { trigger, state, transition, animate, style } from '@angular/animations';
 
+
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css'],
   animations: [
     trigger('fade', [
       // Defines style for the void state.
@@ -18,36 +18,35 @@ import { trigger, state, transition, animate, style } from '@angular/animations'
       ])
     ]) //End of trigger
   ] // End of animations
-  
-}) // End of component
-export class AppComponent {
+})
+export class HomeComponent implements OnInit {
 
-  articles: any;
-  outlets: string[] = [];
-  news: any;
-  logos_: any;
-  current_state = "void"
+    articles: any;
+    outlets: string[] = [];
+    news: any;
+    logos_: any;
 
+    constructor(private _http: HttpService) {
+      this.retrieveHeadlines();
+      this.retrieveSources();
+    }
 
-  constructor(private _http: HttpService) {
-    this.retrieveSources();
+  ngOnInit(): void {
   }
 
-  changeState(){
-    if (this.current_state == "void") {
-      this.current_state = "*"
-    } else {
-      this.current_state = "void"
-    }
+  retrieveHeadlines() {
+    this._http.getTopHeadlines().subscribe(data => {
+      this.articles = data['articles'];
+      console.log(this.articles)
+    })
   }
 
   retrieveSources() {
     this._http.getSources().subscribe(data => {
       this.news = data['sources'];
-      console.log("Sources", this.news)
       for(let source of this.news) {
         this.outlets.push(source.name);
       }
     })
   }
-}// End of exports
+} // End of exports

@@ -1,50 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
+  <!DOCTYPE html>
+  <html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.js"  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="  crossorigin="anonymous"></script>
-    <title>Newsy</title>
+    <title>Home</title>
   </head>
   <body>
-    <div class="container">
-      <div class="header">
-        <h1 class="title">Newsy</h1>
-        <button (click)="changeState()"><i class="fas fa-search"></i></button>
+    <div class="header">
+      <a href="/"><h1 class="title">Newsy</h1></a>
+      <button (click)="changeState()"><i class="fas fa-search"></i></button>
+    </div>
+    <div [@fade]=current_state class="side-nav">
+      <div *ngFor="let source of news">
+        <a [routerLink]="'news'"><div @fade [ngStyle]="{'background-image': 'url(../../assets/images/'+ source.id +'.png)'}" class="logo-image"></div></a>
+        <a [routerLink]="'news'"><p @fade class="s-id">{{source.id}}</p></a>
       </div>
-        <div  class="div-one" *ngFor="let article of articles">
-          <div class="box-header">
-            <h1>{{article.source.name}}</h1>
-            <div [ngStyle]="{'background-image': 'url(../assets/images/'+ article.source.id +'.png)'}" class="logo-image"></div>
-          </div>
-          <div class="box-title">
-            <h1 class="desc">{{article.title}}</h1>
-            <img src="{{article.urlToImage}}" alt="headline-img" class="head-img">
-            <p class="a-desc">{{article.description}}</p>
-            <div class="box-opt">
-              <a href="" class="options"><i class="fas fa-heart"></i>Likes</a>
-              <a href="" class="options"><i class="fas fa-comment"></i>Comments</a>
-              <a href="" class="options"><i class="fas fa-share-alt"></i>Share</a>
-              <a href="" class="options"><i class="fas fa-info"></i>More</a>
-            </div>
-          </div>
-        </div>
-          <div [@fade]=current_state class="side-nav">
-            <div *ngFor="let source of news">
-              <a href=""><div @fade [ngStyle]="{'background-image': 'url(../assets/images/'+ source.id +'.png)'}" class="logo-image"></div></a>
-              <a href=""><p @fade class="s-id">{{source.id}}</p></a>
-            </div>
-          </div>
     </div>
   </body>
-</html>
-
-<script type="text/javascript">
-    $(document).ready(function(){
-        $("button").click(function(event){
-          event.preventDefault();
-            $(".side-nav").hide();
-        });
-    });
-</script>
+  </html>
+<router-outlet></router-outlet>
