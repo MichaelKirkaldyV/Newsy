@@ -1,1 +1,29 @@
-<h1>SOURCE WORKSSSSSSS</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div  class="div-one" *ngFor="let item of news_sources">
+          <div class="box-header">
+            <h1>{{item.source.name}}</h1>
+            <div [ngStyle]="{'background-image': 'url(../assets/images/'+ item.source.id +'.png)'}" class="logo-image"></div>
+          </div>
+          <div class="box-title">
+            <h1 class="desc">{{item.title}}</h1>
+            <img src="{{item.urlToImage}}" alt="headline-img" class="head-img">
+            <p class="a-desc">{{item.description}}</p>
+            <div class="box-opt">
+              <a href="" class="options"><i class="fas fa-heart"></i>Likes</a>
+              <a href="" class="options"><i class="fas fa-comment"></i>Comments</a>
+              <a href="" class="options"><i class="fas fa-share-alt"></i>Share</a>
+              <a href="" class="options"><i class="fas fa-info"></i>More</a>
+            </div>
+          </div>
+        </div>
+    </div>
+</body>
+</html>

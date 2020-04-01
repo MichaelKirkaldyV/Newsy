@@ -171,3 +171,7 @@ button {
     margin-left: 25px;
     cursor: pointer;
 }
+
+.like {
+    display: inline-block;
+}

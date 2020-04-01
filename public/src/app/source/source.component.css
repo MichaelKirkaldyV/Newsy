@@ -1,0 +1,143 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+@font-face {
+    font-family: butler-black;
+    src: url("../../assets/fonts/Butler/Butler_Black.otf") format("opentype");
+  }
+
+.container {
+    height: 100%;
+    width: 100%;
+    background-color: #f1f1f1;
+}
+
+.title {
+    font-family: 'butler-black-extrabold', 'arial', sans-serif;
+    color: blue;
+    margin-bottom: 25px;
+    display: inline-block;
+}
+
+.div-one {
+    height: 572px;
+    width: 578px;
+    border-radius: 10px;
+    background-color: white;
+    display: inline-block;
+    margin-right: 45px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 10px 10px 8px #888888;
+    vertical-align: top;
+    text-align: left;
+}
+
+.box-header {
+    width: 100%;
+    height: 60px;
+    background-color: blue;
+    color: white;
+}
+
+.box-header h1 {
+    font-family: 'butler-black', 'arial', sans-serif;
+    text-align: left;
+    font-size: 20px;
+    margin-left: 19px;
+    padding-top: 19px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.box-img {
+    width: 100%;
+    height: 292px;
+    background-color: gray;
+}
+
+img {
+    height: 340px;
+    width: 578px;
+    background-size: cover;
+}
+
+.options {
+    text-decoration: none;
+    margin-right: 15px;
+    margin-top: 20px;
+    color: #006fc6;
+}
+
+.desc {
+    font-size: 16px;
+    text-align: left;
+    margin: 10px 10px 0 10px;
+    margin-bottom: 25px;
+}
+
+.box-title p {
+    text-align: left;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    height: 43px;
+}
+
+.news {
+    height: 600px;
+    width: 400px;
+    background-color: gray;
+}
+
+.s-name {
+    margin-top: 10px;
+}
+
+.desc-two {
+    margin-top: 60px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.box-opt {
+    text-align: center;
+    margin-top: 26px;
+}
+
+i {
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+    margin-right: 10px;
+    color: #504fa4;
+}
+
+.logo {
+    background-color: yellow;
+    height: 700px;
+    width: 300px;
+    display: inline-block;
+}
+
+.logo-img {
+    height: 35px;
+    width: 35px;
+}
+
+.test {
+    height: 400px;
+    width: 400px;
+    background-color: red;
+}
+
+.logo-image {
+    height: 45px;
+    width: 45px;
+    background-size: cover;
+    display: inline-block;
+    border-radius: 50px;
+    margin-left: 10px;
+    margin-top: 8px;
+}

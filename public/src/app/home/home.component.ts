@@ -25,6 +25,8 @@ export class HomeComponent implements OnInit {
     outlets: string[] = [];
     news: any;
     logos_: any;
+    art: any;
+    
 
     constructor(private _http: HttpService) {
       this.retrieveHeadlines();
@@ -34,10 +36,24 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  addLike(article) {
+    console.log("Here is the article", article)
+    article.likes += 1
+  }
+
   retrieveHeadlines() {
     this._http.getTopHeadlines().subscribe(data => {
       this.articles = data['articles'];
-      console.log(this.articles)
+      console.log("ARTICLES-----", this.articles)
+      this.articles[0].likes = 23;
+      if (this.articles) {
+        for (var x in this.articles) {
+          this.articles[x].likes = 0;
+          // alt_Id added for use of likes, some IDs are null.
+          this.articles[x].alt_ID = x;
+          this.articles[x].comments = [];
+        }
+      }
     })
   }
 
