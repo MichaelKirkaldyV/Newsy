@@ -18,11 +18,10 @@
             <img src="{{article.urlToImage}}" alt="headline-img" class="head-img">
             <p class="a-desc">{{article.description}}</p>
             <div class="box-opt">
-  
               <p *ngIf="article.likes" class="like"> {{article.likes}} </p>
               <a (click)="addLike(article)" class="options"><i class="fas fa-heart"></i>Likes</a>
               <a href="" class="options"><i class="fas fa-comment"></i>Comments</a>
-              <a href="" class="options"><i class="fas fa-share-alt"></i>Share</a>
+              <a href="http://twitter.com/share?text=[NEWS!!!]&url={{article.url}}" class="options"><i class="fas fa-share-alt"></i>Share</a>
               <a href="{{article.url}}" class="options"><i class="fas fa-info"></i>More</a>
             </div>
           </div>
