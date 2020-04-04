@@ -10,15 +10,15 @@ import { trigger, state, transition, animate, style } from '@angular/animations'
   animations: [
     trigger('fade', [
       // Defines style for the void state.
-      state('void', style({ opacity: 0 })),
-      state("*", style({ opacity: 1})),
+      state('void', style({ display: 'none', opacity: 0 })),
+      state("*", style({ display: 'block', opacity: 1})),
       // String is bi-directional for the transitional state --from void to default and default to void
       transition('void <=> *', [
         animate(500)
       ])
     ]) //End of trigger
   ] // End of animations
-})
+}) // End of component
 export class HomeComponent implements OnInit {
 
     articles: any;
@@ -26,6 +26,7 @@ export class HomeComponent implements OnInit {
     news: any;
     logos_: any;
     art: any;
+    current_state = "void"
     
 
     constructor(private _http: HttpService) {
@@ -40,6 +41,15 @@ export class HomeComponent implements OnInit {
     console.log("Here is the article", article)
     article.likes += 1
   }
+
+  changeState(){
+    if (this.current_state == "void") {
+      this.current_state = "*"
+    } else {
+      this.current_state = "void"
+    }
+  }
+
 
   retrieveHeadlines() {
     this._http.getTopHeadlines().subscribe(data => {

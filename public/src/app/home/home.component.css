@@ -69,6 +69,7 @@ img {
     margin-right: 15px;
     margin-top: 20px;
     color: #006fc6;
+    cursor: pointer;
 }
 
 .desc {
@@ -175,3 +176,14 @@ button {
 .like {
     display: inline-block;
 }
+
+.links {
+    height: 15px;
+    width: 92px;
+    position: relative;
+    padding: 25px;
+    border-radius: 10px;
+    left: 300px;
+    background-color: honeydew;
+}
+
