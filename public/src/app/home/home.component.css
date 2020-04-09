@@ -187,3 +187,7 @@ button {
     background-color: honeydew;
 }
 
+.hidden {
+   display: none;
+   
+}

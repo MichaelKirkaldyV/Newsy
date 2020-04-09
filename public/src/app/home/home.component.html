@@ -8,7 +8,7 @@
   </head>
   <body>
     <div class="container">
-        <div  class="div-one" *ngFor="let article of articles">
+        <div  class="div-one" *ngFor="let article of articles; let i = index">
           <div class="box-header">
             <h1>{{article.source.name}}</h1>
             <div [ngStyle]="{'background-image': 'url(../assets/images/'+ article.source.id +'.png)'}" class="logo-image"></div>
@@ -18,13 +18,12 @@
             <img src="{{article.urlToImage}}" alt="headline-img" class="head-img">
             <p class="a-desc">{{article.description}}</p>
             <div class="box-opt">
-              <p *ngIf="article.likes" class="like"> {{article.likes}} </p>
+              <p *ngIf="article.likes" class="like">{{article.likes}}</p>
               <a (click)="addLike(article)" class="options"><i class="fas fa-heart"></i>Likes</a>
-              <a href="" class="options"><i class="fas fa-comment"></i>Comments</a>
-              <a (click)="changeState()" class="options"><i class="fas fa-share-alt"></i>Share</a>
+              <a (click)="changeState(article)" class="options"><i class="fas fa-share-alt"></i>Share</a>
               <a href="{{article.url}}" class="options"><i class="fas fa-info"></i>More</a>
-              <div [@fade]=current_state class="links">
-                <a href="http://twitter.com/share?text=NEWS!!!&url={{article.url}}"><i class="fab fa-twitter"></i></a>
+              <div [ngClass]="article.clicked == true ? 'links': 'hidden'" >
+                <a href="http://twitter.com/share?&url={{article.url}}"><i class="fab fa-twitter"></i></a>
                 <a href="http://www.facebook.com/sharer.php?u={{article.url}}"><i class="fab fa-facebook-f"></i></a>
                 <a href="mailto:?subject=News Headlines&body=Check out this site! {{article.url}}"><i class="fas fa-envelope"></i></a>
               </div>
