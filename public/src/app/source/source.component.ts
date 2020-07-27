@@ -22,6 +22,11 @@ export class SourceComponent implements OnInit {
     this.retrieveSource(this.id);
   }
 
+  changeState(item){
+    console.log("We found an article", item)
+    item.clicked = true;
+  }
+
   addLike(item) {
     console.log("Here is the article", item)
     item.likes += 1
