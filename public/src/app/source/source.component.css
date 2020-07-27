@@ -69,6 +69,7 @@ img {
     margin-right: 15px;
     margin-top: 20px;
     color: #006fc6;
+    cursor: pointer;
 }
 
 .desc {
@@ -130,6 +131,9 @@ i {
     height: 400px;
     width: 400px;
     background-color: red;
+}
+.like {
+  display: inline-block;
 }
 
 .logo-image {
