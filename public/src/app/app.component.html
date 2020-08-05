@@ -13,7 +13,7 @@
     </div>
     <div [@fade]=current_state class="side-nav">
       <div *ngFor="let source of news">
-        <a class="logo-image" [routerLink]="['news/', source.id]"><div @fade  [ngStyle]="{'background-image': 'url(../../assets/images/'+ source.id +'.png)'}" class="logo-image"></div></a>
+        <a  class="logo-image" [routerLink]="['news/', source.id]"><div @fade  [ngStyle]="{'background-image': 'url(../../assets/images/'+ source.id +'.png)'}" class="logo-image"></div></a>
         <a  class="s-id" [routerLink]="['news/', source.id]"><p @fade class="s-id">{{source.id}}</p></a>
       </div>
     </div>

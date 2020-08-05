@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from './http.service';
 import { trigger, state, transition, animate, style } from '@angular/animations';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -26,16 +26,14 @@ export class AppComponent {
   news: any;
   logos_: any;
   current_state = "void"
+  _id: any;
 
 
-  constructor(private _http: HttpService, private router: Router) {
+  constructor(private _http: HttpService, private router: Router, private activateRoute: ActivatedRoute) {
     this.retrieveSources();
   }
 
   ngOnInit(): void {
-    this.router.routeReuseStrategy.shouldReuseRoute = () => {
-      return false;
-    }
   }
 
   changeState(){
@@ -46,6 +44,7 @@ export class AppComponent {
     }
   }
 
+  // Gets sources for dropdown list.
   retrieveSources() {
     this._http.getSources().subscribe(data => {
       this.news = data['sources'];
