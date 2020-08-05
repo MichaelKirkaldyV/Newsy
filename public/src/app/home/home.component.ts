@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
     news: any;
     logos_: any;
     art: any;
-    
+
 
     constructor(private _http: HttpService) {
       this.retrieveHeadlines();
@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
   addLike(article) {
     console.log("Here is the article", article)
     article.likes += 1
-  } 
+  }
 
   changeState(article){
     console.log("We found an article", article)

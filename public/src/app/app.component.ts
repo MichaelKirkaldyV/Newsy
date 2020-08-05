@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpService } from './http.service';
 import { trigger, state, transition, animate, style } from '@angular/animations';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -27,8 +28,14 @@ export class AppComponent {
   current_state = "void"
 
 
-  constructor(private _http: HttpService) {
+  constructor(private _http: HttpService, private router: Router) {
     this.retrieveSources();
+  }
+
+  ngOnInit(): void {
+    this.router.routeReuseStrategy.shouldReuseRoute = () => {
+      return false;
+    }
   }
 
   changeState(){
